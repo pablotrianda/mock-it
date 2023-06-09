@@ -11,7 +11,7 @@ import (
 func Process(data string) (map[string]interface{}, error){
 	if !isAFile(data){
 		// Body with default response
-		jsonString := `{"msg":"hello from MOCKIT"}`
+		jsonString := `{"msg":"Hello from MOCKIT 🧉"}`
 		var data map[string]interface{}
 		json.Unmarshal([]byte(jsonString), &data)
 		return data, nil

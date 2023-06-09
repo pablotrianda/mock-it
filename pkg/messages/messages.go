@@ -40,7 +40,7 @@ func InvalidVerbErrorMessageAndExit(invalidVerb string){
 
 func PrintInitialServerLogs(port string, verb string, endpoint string){
 	log.Printf(fmt.Sprintf("Starting MOCKIT server at %s port...\n", port))
-	fmt.Printf("Available endpoint:\n")
+	log.Println(color.InBold(fmt.Sprintf("\nAvailable endpoint:")))
 	fmt.Println(color.InGreen(fmt.Sprintf("\t %s http://localhost:%s%s \n", strings.ToUpper(verb),port, endpoint)))
 }
 
@@ -50,6 +50,6 @@ func PrintServerRequest(verb string, endpoint string, statusCode int){
 }
 
 func ShutdownServer(){
-	log.Println("Close connections...")
+	log.Println(color.InBold(fmt.Sprintf("\nClose connections...")))
 }
 
