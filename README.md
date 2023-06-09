@@ -9,7 +9,7 @@ mock-it -v <VERB> -e <ENDPOINT> -d <RESPONSE_DATA> -s <STATUS_CODE>
 ## Flags
     * `-v` Http verb -> By default: `GET`
     * `-e` Endpoint  -> By default: `/`
-    * `-d` Data to response -> By default: `{"msg":"ok"}`
+    * `-d` Data to response -> By default: `{"msg":"Hello from MOCKIT 🧉"}`
     * `-s` Response status  -> By default: `200`
     * `-p` Port -> By default: `3000`
 
@@ -21,14 +21,38 @@ mock-it -v <VERB> -e <ENDPOINT> -d <RESPONSE_DATA> -s <STATUS_CODE>
     * PATCH
 
 
-levanta un server con el endpoint:
-GET -> `localhost:9090/users` -> return -> data in `data.json` -> status `200`
+## Examples:
+```
+$ mock-it
+```
+This will create a new server with the enpoint:
+`GET - http://localhost:3000/` and response with `{"msg":"Hello from MOCKIT 🧉"}` and status `200`
 
-Ejemplos:
+
 
 ```
-mock-it post user -d data.json
+$ mock-it -v post -e user -d data.json -s 202
 ```
+This will create a new server with the enpoint:
+`POST - http://localhost:3000/user` and response with the data.json data and status `202`:
+data.json
+```
+[
+    {
+        "user":123,
+        "name":"foo"
+    }
+]
+
+```
+
+
+
+```
+$ mock-it -v get -e users -d data.json -s 200
+```
+This will create a new server with the enpoint:
+`GET - http://localhost:3000/users` and response with the data.json data and status `200`:
 data.json
 ```
 [
@@ -37,13 +61,9 @@ data.json
         "name":"foo"
     },
     {
-        "user":123,
+        "user":456,
         "name":"bar"
     }
 ]
-```
 
 ```
-mock-it get users -s 402
-```
-
