@@ -9,7 +9,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/pablotrianda/mockit/pkg/messages"
+	"github.com/pablotrianda/mockit/src/pkg/messages"
 )
 
 func gracefulShutdown() {

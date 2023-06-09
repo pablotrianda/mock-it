@@ -4,11 +4,11 @@ import (
 	"os"
 	"strconv"
 
-	c "github.com/pablotrianda/mockit/pkg/cli"
-	"github.com/pablotrianda/mockit/pkg/messages"
-	"github.com/pablotrianda/mockit/pkg/response"
-	"github.com/pablotrianda/mockit/pkg/server"
-	"github.com/pablotrianda/mockit/pkg/validations"
+	c "github.com/pablotrianda/mockit/src/pkg/cli"
+	"github.com/pablotrianda/mockit/src/pkg/messages"
+	"github.com/pablotrianda/mockit/src/pkg/response"
+	"github.com/pablotrianda/mockit/src/pkg/validations"
+	"github.com/pablotrianda/mockit/src/pkg/server"
 )
 
 func main(){
