@@ -41,12 +41,13 @@ func InvalidVerbErrorMessageAndExit(invalidVerb string){
 func PrintInitialServerLogs(port string, verb string, endpoint string){
 	log.Printf(fmt.Sprintf("Starting MOCKIT server at %s port...\n", port))
 	log.Println(color.InBold(fmt.Sprintf("\nAvailable endpoint:")))
-	fmt.Println(color.InGreen(fmt.Sprintf("\t %s http://localhost:%s%s \n", strings.ToUpper(verb),port, endpoint)))
+	fmt.Println(color.InGreen(fmt.Sprintf("\t\t %s http://localhost:%s%s \n", strings.ToUpper(verb),port, endpoint)))
 }
 
 func PrintServerRequest(verb string, endpoint string, statusCode int){
+	infoLogger := log.New(os.Stdout, color.InBold("INFO: "),log.Ltime)
 	upperCaseVerb := strings.ToUpper(verb)
-	fmt.Println(color.InBlue(fmt.Sprintf("%s %s - %d \n",upperCaseVerb, endpoint, statusCode)))
+	infoLogger.Println(color.InBlue(fmt.Sprintf("%s %s - %d \n",upperCaseVerb, endpoint, statusCode)))
 }
 
 func ShutdownServer(){
