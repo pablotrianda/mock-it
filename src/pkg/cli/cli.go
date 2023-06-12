@@ -4,6 +4,15 @@ import (
 	"flag"
 )
 
+/*
+   Cli is an struct to handle and put on a only place the params data
+   field:
+	- Verb: Http verb
+	- Endpoint: Custom end point
+	- ResponseData: Reference to json file to build the response 
+	- StatusCode: Status code to set on the response
+	- ServerPort: Port where the server will be running
+*/
 type Cli struct{
 	Verb string
 	Endpoint string
@@ -12,6 +21,13 @@ type Cli struct{
 	ServerPort string
 }
 
+/*
+   HandleArgs put on a one place all the info passed through the params
+   Params:
+	- args: []String with params (os.Args)
+   Return:
+	- Cli: Cli struct with the params loadedd and they default values
+*/
 func HandleArgs(args []string) Cli {
 	cli := Cli{}
 

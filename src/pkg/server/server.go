@@ -22,9 +22,10 @@ func gracefulShutdown() {
 
 func CreateAndStart(verb string, endpoint string, statusCode int, data map[string]interface{}, port string){
 	go gracefulShutdown()
+	infoLogger := log.New(os.Stdout,"",log.Ltime)
 
 	http.HandleFunc(endpoint,func(w http.ResponseWriter, r *http.Request) {
-		messages.PrintServerRequest(verb, endpoint, statusCode)
+		messages.PrintServerRequest(infoLogger, verb, endpoint, statusCode)
 		// Header and status code
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(statusCode)
