@@ -1,0 +1,37 @@
+name: Build and release
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  BINARY_NAME: mockit
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.20.4
+
+    - name: Build
+      run: | 
+        go run build.go
+        chmod +x build/$BINARY_NAME
+    - name: Release Notes
+      run: git log $(git describe HEAD~ --tags --abbrev=0)..HEAD --pretty='format:* %h %s%n  * %an <%ae>' --no-merges >> ".github/RELEASE-TEMPLATE.md"
+    - name: Release with Notes
+      uses: softprops/action-gh-release@v1
+      with:
+        body_path: ".github/RELEASE-TEMPLATE.md"
+        draft: true
+        files: build/mockit
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
