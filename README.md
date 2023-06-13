@@ -3,7 +3,6 @@
 
 # MOCK-IT
 
-
 Create new mock server
 
 ```
