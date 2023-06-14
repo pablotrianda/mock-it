@@ -1,5 +1,7 @@
 [![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
+[![GitHub release](https://img.shields.io/github/release/pablotrianda/mock-it.svg)](https://GitHub.com/pablotrianda/mock-it/releases/)
 ![status](https://github.com/pablotrianda/mock-it/actions/workflows/go.yml/badge.svg)
+
 
 # MOCK-IT
 
