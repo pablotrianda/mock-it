@@ -6,7 +6,7 @@
 # MOCK-IT ⚡ Create a mock server on the fly
 
 ```sh
-mock-it -v <VERB> -e <ENDPOINT> -d <RESPONSE_DATA> -s <STATUS_CODE>
+mockit -v <VERB> -e <ENDPOINT> -d <RESPONSE_DATA> -s <STATUS_CODE>
 ```
 ![mockit](https://i.imgur.com/kZ6fvmY.gif)
 
@@ -31,7 +31,7 @@ mock-it -v <VERB> -e <ENDPOINT> -d <RESPONSE_DATA> -s <STATUS_CODE>
 ## Examples:
    * Create a simple server, run: 
       ```
-      $ mock-it
+      $ mockit
       ```
       This will create a new server with the enpoint:<br>
          `GET - http://localhost:3000/` and response with `{"msg":"Hello from MOCKIT 🧉"}` and 
@@ -40,7 +40,7 @@ mock-it -v <VERB> -e <ENDPOINT> -d <RESPONSE_DATA> -s <STATUS_CODE>
          
    * Create a server and responde a data from file:
       ```
-      $ mock-it -v post -e user -d data.json -s 202
+      $ mockit -v post -e user -d data.json -s 202
       ```
       This will create a new server with the enpoint: <br>
       `POST - http://localhost:3000/user` and response with the data.json data and status `202`:<br>
