@@ -59,3 +59,6 @@ mockit -v <VERB> -e <ENDPOINT> -d <RESPONSE_DATA> -s <STATUS_CODE>
    1. Clone this repo
    2. Run `go run src/cmd/main.go`
    3. To create a new build with [dagger](https://dagger.io): `go run build`
+
+## Contact
+You can reach me on [Twitter @pablotrianda](https://www.twitter.com/pablotrianda)
