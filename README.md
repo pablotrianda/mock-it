@@ -11,7 +11,9 @@ mockit -v <VERB> -e <ENDPOINT> -d <RESPONSE_DATA> -s <STATUS_CODE>
 ![mockit](https://i.imgur.com/kZ6fvmY.gif)
 
 ## Download
-* Download the latest version from [releases section](https://github.com/pablotrianda/mock-it/releases). 
+* Download the latest version from [releases section](https://github.com/pablotrianda/mock-it/releases).
+## Install with Go
+`go install github.com/pablotrianda/mock-it@latest`
 
 ## Flags
    * `-v` Http verb -> By default: `GET`
